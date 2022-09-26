@@ -1,0 +1,34 @@
+INVITE sip:bob@10.0.0.10:5060;user=phone SIP/2.0
+Record-Route: <sip:10.0.0.10;r2=on;lr>
+Via: SIP/2.0/UDP 10.0.0.10;branch=z9hG4bK307c.483f46dbb990deca3bfb3752298567c8.0
+Via: SIP/2.0/UDP 10.0.4.4;rport=5060;branch=z9hG4bK2ce2f004623b5bf2f
+Max-Forwards: 68
+From: "alice" <sip:alice@10.0.0.10:5060>;tag=08f3503bb7
+To: <sip:bob@10.0.0.10:5060;user=phone>
+Call-ID: c69131ee-d035-4e9d-90d9-07887b3aac68
+CSeq: 1705548404 INVITE
+Accept-Language: nl_nl
+Allow: INVITE, ACK, CANCEL, BYE, NOTIFY, REFER, OPTIONS, PRACK, SUBSCRIBE, INFO, PUBLISH
+Allow-Events: aastra-xml, vdp-session, talk, hold, conference, LocalModeStatus
+Contact: <sip:alice@10.0.0.10;gr=urn:uuid:00000000-0000-1000-8000-00085D48F7EF;alias=10.0.4.4~5060~1>
+Supported: path, gruu, 100rel, replaces
+User-Agent: Aastra 6867i
+Content-Type: application/sdp
+Content-Length: 296
+X-ID: 28182f24-cf4c-4fc1-986c-0f0c6c8d19d1
+
+v=0
+o=MxSIP 0 1 IN IP4 10.0.4.4
+s=SIP Call
+c=IN IP4 10.0.4.4
+t=0 0
+m=audio 3000 RTP/AVP 8 0 18 101
+a=rtpmap:8 PCMA/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:18 G729/8000
+a=rtpmap:101 telephone-event/8000
+a=silenceSupp:off - - - -
+a=fmtp:18 annexb=no
+a=fmtp:101 0-15
+a=ptime:20
+a=sendrecv
